@@ -1,15 +1,6 @@
-<html>
-<head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
-    <title>Analyze That</title>
-</head>
-<body>
-    <div style="display: inline-block; vertical-align: top;"><img src="{{ url_for('static', filename='img/lupa.png') }}" alt="logo" style="max-width: 50px;"> <span style="color:blue; font-size: larger; vertical-align: top;"> Bienvenido a Analyze That</span></div>
-    
-    <p>Landing page del proyecto Analyze That. Test Serving html files</p>
-    
-
-    <script src="{{ url_for('static', filename='js/app.js') }}?v=1"></script>
-</body>
-</html>
+{% extends 'layout/default.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div style="display: inline-block; vertical-align: top;"><img src="{{ url_for('static', filename='img/lupa.png') }}" alt="logo" style="max-width: 50px;"> <span style="color:blue; font-size: larger; vertical-align: top;"> Bienvenido a Analyze That</span></div>
+<p>Landing page del proyecto Analyze That. Test Serving html files</p>
+{% endblock %}
