@@ -1,8 +1,10 @@
 from app import app
+fromm flask import render_template
+
 
 @app.route("/") 
 def index(): 
-	return "<h1>Bienvenido a Analyze That</h1>"
+	return render_template("public/index.html")
 
 @app.route("/about")
 def about():
