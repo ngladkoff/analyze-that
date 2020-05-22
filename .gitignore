@@ -128,3 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 analyze-start.ps1
+.vscode/launch.json
+.vscode/settings.json
