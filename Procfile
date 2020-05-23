@@ -1,1 +1,1 @@
-web: gunicorn analyze:create_app
+web: gunicorn analyze:create_app()
