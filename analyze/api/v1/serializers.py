@@ -1,5 +1,5 @@
 from flask_restplus import fields
-from app.api.rest_api_v1 import api
+from analyze.api.rest_api_v1 import api
 
 user = api.model('User', {
     'id': fields.Integer(readOnly=True,

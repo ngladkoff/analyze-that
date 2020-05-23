@@ -1,6 +1,6 @@
 from flask_restplus import Resource
-from app.api.v1.serializers import user
-from app.api.rest_api_v1 import api
+from analyze.api.v1.serializers import user
+from analyze.api.rest_api_v1 import api
 
 ns = api.namespace('v1/users', description='Operations relatesd to users')
 

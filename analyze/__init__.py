@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, make_response
-from app.api import rest_api_v1
-from app.api.v1.endpoints.users_api import ns as v1_users_ns
-from app.views import root
-from app.views import admin
+from analyze.api import rest_api_v1
+from analyze.api.v1.endpoints.users_api import ns as v1_users_ns
+from analyze.views import root
+from analyze.views import admin
 
 app = Flask(__name__)
 
