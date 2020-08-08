@@ -1,6 +1,7 @@
 import os
 from flask import Flask, jsonify, make_response, Blueprint
 from flask import redirect, session, url_for
+from flask_assets import Environment, Bundle
 from authlib.integrations.flask_client import OAuth
 
 from analyze.api import rest_api_v1
@@ -15,8 +16,8 @@ class AnalyzeFlask(Flask):
     jinja_options.update(dict(
         block_start_string='{%',
         block_end_string='%}',
-        variable_start_string='[[',
-        variable_end_string=']]',
+        variable_start_string='{{',
+        variable_end_string='}}',
         comment_start_string='{#',
         comment_end_string='#}',
     ))
@@ -26,6 +27,24 @@ def create_app():
 
     app = AnalyzeFlask(__name__)
     app.secret_key = "34059085-1f90-48ed-b305-0e95120fe634"
+
+    # Flask-Assets
+    assets = Environment(app)
+
+    css = Bundle('css/all.css',
+                 'css/fontawesome.css',
+                 'css/foundation.css',
+                 'css/style.css',
+                 output='gen/packed.css')
+    assets.register('css', css)
+
+    js = Bundle('js/jquery.js',
+                'js/what-input.js',
+                'js/foundation.js',
+                'js/vue.js',
+                'js/app.js',
+                output='gen/packed.js')
+    assets.register('js', js)
 
     # Flask-Restplus
     # Flask-Restplus settings
