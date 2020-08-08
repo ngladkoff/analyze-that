@@ -10,9 +10,21 @@ from analyze.views import admin
 from urllib.parse import urlencode
 
 
+class AnalyzeFlask(Flask):
+    jinja_options = Flask.jinja_options.copy()
+    jinja_options.update(dict(
+        block_start_string='{%',
+        block_end_string='%}',
+        variable_start_string='[[',
+        variable_end_string=']]',
+        comment_start_string='{#',
+        comment_end_string='#}',
+    ))
+
+
 def create_app():
 
-    app = Flask(__name__)
+    app = AnalyzeFlask(__name__)
     app.secret_key = "34059085-1f90-48ed-b305-0e95120fe634"
 
     # Flask-Restplus

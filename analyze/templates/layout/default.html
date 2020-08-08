@@ -4,20 +4,26 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/all.css') }}?v=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.css') }}?v=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation.css') }}?v=1">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1">
-        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+        <link rel="stylesheet" href="[[ url_for('static', filename='css/all.css') ]]?v=1">
+        <link rel="stylesheet" href="[[ url_for('static', filename='css/fontawesome.css') ]]?v=1">
+        <link rel="stylesheet" href="[[ url_for('static', filename='css/foundation.css') ]]?v=1">
+        <link rel="stylesheet" href="[[ url_for('static', filename='css/style.css') ]]?v=1">
+        <link rel="shortcut icon" href="[[ url_for('static', filename='img/favicon.ico') ]]">
         <title>Analyze That - {% block title %}{% endblock %}</title>
     </head>
 <body>
     {% block content %}
     {% endblock %}
 
-    <script src="{{ url_for('static', filename='js/jquery.js') }}?v=1"></script>
-    <script src="{{ url_for('static', filename='js/what-input.js') }}?v=1"></script>
-    <script src="{{ url_for('static', filename='js/foundation.js') }}?v=1"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}?v=1"></script>
+    <h3>VueJs Test</h3>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <script src="[[ url_for('static', filename='js/jquery.js') ]]?v=1"></script>
+    <script src="[[ url_for('static', filename='js/what-input.js') ]]?v=1"></script>
+    <script src="[[ url_for('static', filename='js/foundation.js') ]]?v=1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="[[ url_for('static', filename='js/app.js') ]]?v=2"></script>
 </body>
 </html>
