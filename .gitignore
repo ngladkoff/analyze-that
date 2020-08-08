@@ -130,3 +130,5 @@ dmypy.json
 
 .vscode/
 analyze-start.ps1
+analyze/static/gen/packed.css
+analyze/static/gen/packed.js
