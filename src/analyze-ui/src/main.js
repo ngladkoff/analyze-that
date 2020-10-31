@@ -8,6 +8,23 @@ import store from './store'
 import Amplify from 'aws-amplify';
 import '@aws-amplify/ui-vue';
 import aws_exports from './aws-exports';
+import { I18n } from 'aws-amplify';
+
+I18n.setLanguage('es');
+
+const dict = {
+  'es': {
+    'Sign In': "Ingresar",
+    'Sign Up': "Registrarse",
+    'Sign in to your account': "Ingresar a su cuenta",
+    'Forgot your password?': "Olvidó su contraseña?",
+    'Reset password': "Resetear contraseña",
+    'No account?': "No tiene cuenta?",
+    'Create account': "Crear cuenta"
+  }
+}
+
+I18n.putVocabularies(dict);
 
 Amplify.configure(aws_exports);
 

@@ -6,20 +6,24 @@
     @update:show="(value) => $store.commit('set', ['sidebarShow', value])"
   >
     <CSidebarBrand class="d-md-down-none" to="/">
+    <div style="padding:5px;">
       <CIcon 
         class="c-sidebar-brand-full" 
         name="logo" 
         size="custom-size" 
-        :height="35" 
-        viewBox="0 0 556 134"
+        :height="35"
+        viewBox="0 0 512 512"
       />
       <CIcon 
         class="c-sidebar-brand-minimized" 
         name="logo" 
         size="custom-size" 
-        :height="35" 
-        viewBox="0 0 110 134"
-      />
+        :height="35"
+        viewBox="0 0 512 512"
+      /></div>
+      <div>
+      <span>Analyze That</span>
+      </div>
     </CSidebarBrand>
 
     <CRenderFunction flat :content-to-render="$options.nav"/>

@@ -8,14 +8,15 @@
     <template #toggler>
       <CHeaderNavLink>
         <div class="c-avatar">
-          <img
-            src="img/avatars/6.jpg"
+          <CIcon name="cil-contact" width="24"/>
+          <!-- <img
+            src="img/avatars/7.jpg"
             class="c-avatar-img "
-          />
+          /> -->
         </div>
       </CHeaderNavLink>
     </template>
-    <CDropdownHeader tag="div" class="text-center" color="light">
+    <!-- <CDropdownHeader tag="div" class="text-center" color="light">
       <strong>Account</strong>
     </CDropdownHeader>
     <CDropdownItem>
@@ -55,10 +56,10 @@
       <CIcon name="cil-file" /> Projects
       <CBadge color="primary" class="ml-auto">{{ itemsCount }}</CBadge>
     </CDropdownItem>
-    <CDropdownDivider/>
-    <CDropdownItem>
+    <CDropdownDivider/> -->
+    <!-- <CDropdownItem>
       <CIcon name="cil-shield-alt" /> Lock Account
-    </CDropdownItem>
+    </CDropdownItem> -->
     <CDropdownItem>
       <CIcon name="cil-lock-locked" /> Logout
     </CDropdownItem>
