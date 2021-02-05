@@ -6,11 +6,13 @@ const TheContainer = () => import('@/containers/TheContainer')
 
 // Views
 const Dashboard = () => import('@/views/Dashboard')
-const GamesData = () => import('@/views/GamesData')
-const GamesAnalytics = () => import('@/views/GamesAnalytics')
-const SettingsDiscover = () => import('@/views/SettingsDiscover')
-const SettingsSelection = () => import('@/views/SettingsSelection')
-const SettingsModels = () => import('@/views/SettingsModels')
+const Games = () => import('@/views/games/Games')
+const GamesList = () => import('@/views/games/GamesList')
+const GamesNew = () => import('@/views/games/GamesNew')
+const GamesAnalytics = () => import('@/views/games/GamesAnalytics')
+const SettingsDiscover = () => import('@/views/settings/SettingsDiscover')
+const SettingsSelection = () => import('@/views/settings/SettingsSelection')
+const SettingsModels = () => import('@/views/settings/SettingsModels')
 
 const Colors = () => import('@/views/theme/Colors')
 const Typography = () => import('@/views/theme/Typography')
@@ -85,14 +87,27 @@ function configRoutes () {
           component: Dashboard
         },
         {
-          path: 'games/data',
+          path: 'games',
           name: 'Juegos',
-          component: GamesData
-        },
-        {
-          path: 'games/analytics',
-          name: 'Análisis',
-          component: GamesAnalytics
+          redirect: '/games/list',
+          component: Games,
+          children: [
+            {
+              path: 'new',
+              name: 'Nuevo Juego',
+              component: GamesNew
+            },
+            {
+              path: 'list',
+              name: 'Lista',
+              component: GamesList
+            },
+            {
+              path: 'analytics',
+              name: 'Análisis',
+              component: GamesAnalytics
+            }
+          ]
         },
         {
           path: 'settings/discover',

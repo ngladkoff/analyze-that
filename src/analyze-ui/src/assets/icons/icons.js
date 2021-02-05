@@ -83,7 +83,8 @@ import {
   cilGem,
   cilCasino,
   cilRunning,
-  cilContact
+  cilContact,
+  cilSave
 
 } from '@coreui/icons'
 import { logo } from './logo'
@@ -143,7 +144,8 @@ export const iconsSet = Object.assign(
     cilGem,
     cilCasino,
     cilRunning,
-    cilContact
+    cilContact,
+    cilSave
   },
   {
     cifUs,

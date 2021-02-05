@@ -9,6 +9,8 @@ import Amplify from 'aws-amplify';
 import '@aws-amplify/ui-vue';
 import aws_exports from './aws-exports';
 import { I18n } from 'aws-amplify';
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 I18n.setLanguage('es');
 
@@ -31,6 +33,7 @@ Amplify.configure(aws_exports);
 Vue.config.performance = true
 Vue.use(CoreuiVue)
 Vue.prototype.$log = console.log.bind(console)
+Vue.use(VueAxios, axios)
 
 new Vue({
   el: '#app',

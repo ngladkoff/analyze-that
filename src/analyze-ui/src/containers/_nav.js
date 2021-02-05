@@ -19,7 +19,7 @@ export default [
       {
         _name: 'CSidebarNavItem',
         name: 'Juegos',
-        to: '/games/data',
+        to: '/games/list',
         icon: 'cil-gamepad'
       },
       {

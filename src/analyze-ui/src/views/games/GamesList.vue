@@ -2,7 +2,7 @@
   <div>
     <CRow>
       <CCol>
-        <CButton color="primary" variant="outline" class="m-2">Nuevo Juego</CButton>
+        <CButton color="primary" variant="outline" class="m-2" @click="newGame">Nuevo Juego</CButton>
       </CCol>
     </CRow>
     <div style="padding:10px;"></div>
@@ -66,6 +66,9 @@ export default {
     }
   },
   methods: {
+    newGame() {
+      this.$router.push({ path: 'new'})
+    }
   }
 }
 </script>
