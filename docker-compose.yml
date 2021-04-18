@@ -1,0 +1,28 @@
+version: '3.7'
+
+services:
+  analyze_bff:
+    build: ../analyze-that-bff
+    volumes:
+      - ../analyze-that-bff/:/app/
+    ports:
+      - 8000:80
+
+  analyze_web:
+    build: ../analyze-that-ui-web
+    volumes:
+      - ../analyze-that-ui-web/:/app/
+    ports:
+      - 8080:80
+
+  analyze_db:
+    image: postgres:12.1-alpine
+    volumes:
+      - postgres_data_bff:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=db_username
+      - POSTGRES_PASSWORD=db_password
+      - POSTGRES_DB=analyze_db_dev
+
+volumes:
+  postgres_data_bff:

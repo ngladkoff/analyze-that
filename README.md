@@ -1,9 +1,6 @@
-# analyze-that
+# Levantar docker compose
+docker-compose up -d --build
 
-## Activar Environment y abrir VSCode
+# Bajar docker compose
+docker-compose down
 
-- Abrir Windows PowerShell
-- Ir al directorio de la solución
-- Ejecutar ./analyze-start.ps1
-- Ctrl + Ctrl
-- Ejecutar VSCode con "code ."
