@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   analyze_bff:
+    container_name: analyze-that-bff
     build: ../analyze-that-bff
     volumes:
       - ../analyze-that-bff/:/app/
@@ -12,6 +13,7 @@ services:
       - 8000:8000
 
   analyze_web:
+    container_name: analyze-that-web
     build: ../analyze-that-ui-web
     volumes:
       - ../analyze-that-ui-web/:/app/
@@ -19,6 +21,7 @@ services:
       - 8080:80
 
   analyze_db:
+    container_name: analyze-that-db
     image: postgres:13-alpine
     volumes:
       - postgres_data_bff:/var/lib/postgresql/data/
@@ -26,6 +29,16 @@ services:
       - ../analyze-that-bff/.env
     ports:
       - 5432:5432
+
+  pgadmin:
+    container_name: pgadmin4
+    image: dpage/pgadmin4
+    restart: always
+    environment: 
+      PGADMIN_DEFAULT_EMAIL: analyze@that.com
+      PGADMIN_DEFAULT_PASSWORD: admin1234
+    ports:
+      - 80:80
 
 volumes:
   postgres_data_bff:
