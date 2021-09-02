@@ -38,7 +38,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: analyze@that.com
       PGADMIN_DEFAULT_PASSWORD: admin1234
     ports:
-      - 80:80
+      - 8088:80
 
 volumes:
   postgres_data_bff:
