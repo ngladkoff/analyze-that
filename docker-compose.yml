@@ -4,6 +4,7 @@ services:
   analyze_bff:
     container_name: analyze-that-bff
     build: ../analyze-that-bff
+    restart: always
     volumes:
       - ../analyze-that-bff/:/app/
     command: uvicorn main:app --reload --workers 1 --host 0.0.0.0 --port 8000
@@ -15,6 +16,7 @@ services:
   analyze_web:
     container_name: analyze-that-web
     build: ../analyze-that-ui-web
+    restart: always
     volumes:
       - ../analyze-that-ui-web/:/app/
     ports:
@@ -23,6 +25,7 @@ services:
   analyze_db:
     container_name: analyze-that-db
     image: postgres:13-alpine
+    restart: always
     volumes:
       - postgres_data_bff:/var/lib/postgresql/data/
     env_file:
